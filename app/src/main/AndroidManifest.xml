@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.possale">
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
+        />
+    <uses-permission  android:name="android.permission.QUERY_ALL_PACKAGES" tools:ignore="QueryAllPackagesPermission"/>
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/icon"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SaleApp"
+        android:usesCleartextTraffic="true">
+        <activity android:name="com.example.CodeFormatSelector"
+            android:theme="@style/Theme.SaleApp.NoActionBar" ></activity>
+        <activity android:name="com.example.Strart"
+            android:theme="@style/Theme.SaleApp.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name="com.example.SetDevicename" />
+        <activity
+            android:name="com.example.CountersList"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.SaveSale"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.setupApiUrl"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.Scan"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.PrinterConnect"
+            android:theme="@style/Theme.SaleApp.whiteBg" />
+        <activity
+            android:name="com.example.ScanItems"
+            android:theme="@style/Theme.SaleApp.NoActionBar"></activity>
+        <activity
+            android:name="com.example.Login"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.GodownList"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.BranchList"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.CompaniesList"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.Settings"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.ServerSettings"
+            android:label="@string/title_activity_server_settings"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity
+            android:name="com.example.PrinterSettings"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.SaleApp.NoActionBar" />
+        <activity android:name="com.example.Home" />
+        <activity android:name="com.example.MainActivity" />
+    </application>
+
+</manifest>

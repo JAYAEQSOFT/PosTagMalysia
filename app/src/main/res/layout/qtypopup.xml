@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+
+    android:id="@+id/bottomSheetContainer" android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="right"
+            android:layout_weight=".2">
+            <ImageView
+                android:id="@+id/closeicon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+
+                android:layout_gravity="right"
+
+                android:src="@drawable/ic_baseline_clear_40"
+
+                app:tint="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/deleteicon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:layout_margin="15sp"
+                android:layout_gravity="right"
+                android:visibility="gone"
+                android:src="@drawable/ic_baseline_clear_40"
+
+                />
+            <ImageView
+                android:id="@+id/saveicon"
+                android:layout_gravity="right"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="15sp"
+
+
+
+                android:src="@drawable/ic_baseline_done_all_40"
+
+                />
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:id="@+id/prdName"
+            android:text="Popup sample"/>
+        <TextView android:textAppearance="?android:textAppearanceLarge"
+            android:textSize="18.0sp" android:gravity="left" android:id="@+id/details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:text="" />
+    </LinearLayout>
+
+
+
+
+
+
+
+    <!-- <LinearLayout
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="horizontal"
+         android:padding="5dp">
+
+
+         <Spinner android:id="@+id/spinnerunit"
+             android:layout_width="200dp"
+             android:gravity="left"
+             android:layout_height="wrap_content"/>
+
+
+
+
+     </LinearLayout>-->
+
+
+
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_weight=".5"
+                android:text="Qty"/>
+
+            <EditText android:textSize="18.0sp"
+                android:textColor="@color/black"
+                android:id="@+id/userInputQty"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight=".5"
+                android:hint="Qty :"
+
+                android:selectAllOnFocus="true"
+                android:gravity="right"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+    <LinearLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:id="@+id/linearLayout4">
+
+
+        <Button
+            android:id="@+id/cancel_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/purple_500"
+            android:text="Cancel"
+            android:layout_margin="5sp"
+            android:visibility="gone"
+            android:textColor="@color/white"/>
+
+        <Button
+            android:id="@+id/save_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:text="Save"
+            android:layout_margin="5sp"
+            android:background="@color/purple_500"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

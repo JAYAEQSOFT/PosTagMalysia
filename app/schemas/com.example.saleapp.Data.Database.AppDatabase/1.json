@@ -1,0 +1,2290 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "2fb1968570966f8fd5f3d03ee0705c4b",
+    "entities": [
+      {
+        "tableName": "CompanySettings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `DeviceId` INTEGER NOT NULL, `Id` INTEGER NOT NULL, `ClientId` INTEGER NOT NULL, `Name` TEXT, `Address` TEXT, `PhoneNo` TEXT, `MobileNo` TEXT, `EmailId` TEXT, `GSTIN` TEXT, `PlaceOfSupply` TEXT, `CreatedOn` TEXT, `ExpiryDate` TEXT, `Blocked` INTEGER NOT NULL, `Token` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "DeviceId",
+            "columnName": "DeviceId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ClientId",
+            "columnName": "ClientId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Name",
+            "columnName": "Name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Address",
+            "columnName": "Address",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "PhoneNo",
+            "columnName": "PhoneNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "MobileNo",
+            "columnName": "MobileNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "EmailId",
+            "columnName": "EmailId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "GSTIN",
+            "columnName": "GSTIN",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "PlaceOfSupply",
+            "columnName": "PlaceOfSupply",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "CreatedOn",
+            "columnName": "CreatedOn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ExpiryDate",
+            "columnName": "ExpiryDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Blocked",
+            "columnName": "Blocked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Token",
+            "columnName": "Token",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "AppSettings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Id` INTEGER NOT NULL, `RepwiseCustomerFilter` INTEGER NOT NULL, `EnableBulkQtyInOrder` INTEGER NOT NULL, `DisableOrderEditing` INTEGER NOT NULL, `UseNetRateInOrder` INTEGER NOT NULL, `EnableCreditLimit` INTEGER NOT NULL, `CashBillForZeroCreditLimit` INTEGER NOT NULL, `EnableDiscount` INTEGER NOT NULL, `EnableStockValidation` INTEGER NOT NULL, `CustomerWisePriceList` INTEGER NOT NULL, `IncludeKfcInNetRate` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repwiseCustomerFilter",
+            "columnName": "RepwiseCustomerFilter",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enableBulkQtyInOrder",
+            "columnName": "EnableBulkQtyInOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "disableOrderEditing",
+            "columnName": "DisableOrderEditing",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "useNetRateInOrder",
+            "columnName": "UseNetRateInOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enableCreditLimit",
+            "columnName": "EnableCreditLimit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cashBillForZeroCreditLimit",
+            "columnName": "CashBillForZeroCreditLimit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enableDiscount",
+            "columnName": "EnableDiscount",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "enableStockValidation",
+            "columnName": "EnableStockValidation",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerWisePriceList",
+            "columnName": "CustomerWisePriceList",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "includeKFCNetRate",
+            "columnName": "IncludeKfcInNetRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "DeviceInfo",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Id` INTEGER NOT NULL, `ClientId` INTEGER NOT NULL, `CompanyId` INTEGER NOT NULL, `DeviceType` INTEGER NOT NULL, `DeviceCode` TEXT, `IsRegistered` INTEGER NOT NULL, `RegisteredAt` TEXT, `ExpiryDate` TEXT, `MachineId` TEXT, `MobileNo` TEXT, `OtpNo` TEXT, `Blocked` INTEGER NOT NULL, `ResetPasswordCode` TEXT, `ResetPasswordReason` TEXT, `DeviceRepRefId` INTEGER NOT NULL, `RepName` TEXT, `deviceGodownRefId` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "clientId",
+            "columnName": "ClientId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceType",
+            "columnName": "DeviceType",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "deviceCode",
+            "columnName": "DeviceCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isRegistered",
+            "columnName": "IsRegistered",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "registeredAt",
+            "columnName": "RegisteredAt",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "expiryDate",
+            "columnName": "ExpiryDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "machineId",
+            "columnName": "MachineId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "mobileNo",
+            "columnName": "MobileNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "otpNo",
+            "columnName": "OtpNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "blocked",
+            "columnName": "Blocked",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "resetPasswordCode",
+            "columnName": "ResetPasswordCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "resetPasswordReason",
+            "columnName": "ResetPasswordReason",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deviceRepRefId",
+            "columnName": "DeviceRepRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repName",
+            "columnName": "RepName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "deviceGodownRefId",
+            "columnName": "deviceGodownRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Trips",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `CompanyId` INTEGER NOT NULL, `RefId` INTEGER NOT NULL, `TripNo` TEXT, `TripDate` TEXT, `RouteRefId` INTEGER NOT NULL, `RouteName` TEXT, `RepRefId` INTEGER NOT NULL, `RepName` TEXT, `Remarks` TEXT, `Closed` INTEGER NOT NULL, `ClosedAt` TEXT, `IsActive` INTEGER NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CompanyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RefId",
+            "columnName": "RefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "TripNo",
+            "columnName": "TripNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "TripDate",
+            "columnName": "TripDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "RouteRefId",
+            "columnName": "RouteRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RouteName",
+            "columnName": "RouteName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "RepRefId",
+            "columnName": "RepRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RepName",
+            "columnName": "RepName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Remarks",
+            "columnName": "Remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Closed",
+            "columnName": "Closed",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ClosedAt",
+            "columnName": "ClosedAt",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "IsActive",
+            "columnName": "IsActive",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Customer",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Id` INTEGER NOT NULL, `CompanyId` INTEGER NOT NULL, `RefId` INTEGER NOT NULL, `Name` TEXT, `Code` TEXT, `Address` TEXT, `Phone` TEXT, `Gstn` TEXT, `Email` TEXT, `Balance` REAL NOT NULL, `BonusPoints` INTEGER NOT NULL, `CreditLimits` INTEGER NOT NULL, `PriceLevel` INTEGER NOT NULL, `RepRefId` INTEGER NOT NULL, `Route` TEXT, `Area` TEXT, `DayRoute` TEXT, `RouteIndex` INTEGER NOT NULL, `Latitude` REAL NOT NULL, `Longitude` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "refId",
+            "columnName": "RefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "Name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "Code",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "Address",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phoneNo",
+            "columnName": "Phone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "gSTIN",
+            "columnName": "Gstn",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "email",
+            "columnName": "Email",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "balance",
+            "columnName": "Balance",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bonusPoints",
+            "columnName": "BonusPoints",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "creditLimit",
+            "columnName": "CreditLimits",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceLevel",
+            "columnName": "PriceLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "repRefId",
+            "columnName": "RepRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "route",
+            "columnName": "Route",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "area",
+            "columnName": "Area",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dayRoute",
+            "columnName": "DayRoute",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "routeIndex",
+            "columnName": "RouteIndex",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "Latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "Longitude",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Product",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Id` INTEGER NOT NULL, `CompanyId` INTEGER NOT NULL, `refId` INTEGER NOT NULL, `Name` TEXT, `Code` TEXT, `Category` TEXT, `Unit` TEXT, `Price` REAL NOT NULL, `Price2` REAL NOT NULL, `Price3` REAL NOT NULL, `Price4` REAL NOT NULL, `Price5` REAL NOT NULL, `PurchasePrice` REAL NOT NULL, `PurchaseCost` REAL NOT NULL, `MRPPrice` REAL NOT NULL, `Stock` REAL NOT NULL, `Volume` REAL NOT NULL, `TaxRate` REAL NOT NULL, `Offer` TEXT, `IsLitreItem` INTEGER NOT NULL, `ImagName` TEXT, `CgstRate` REAL NOT NULL, `SgstRate` REAL NOT NULL, `CessRate` REAL NOT NULL, `AdlCessRate` REAL NOT NULL, `KFCessRate` REAL NOT NULL, `LastSyncTime` TEXT, `MarkedForDelete` INTEGER NOT NULL, `UnitRefId` INTEGER NOT NULL, `CurrentStock` REAL NOT NULL)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "refId",
+            "columnName": "refId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "Name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "code",
+            "columnName": "Code",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "category",
+            "columnName": "Category",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "unit",
+            "columnName": "Unit",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "price",
+            "columnName": "Price",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price2",
+            "columnName": "Price2",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price3",
+            "columnName": "Price3",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price4",
+            "columnName": "Price4",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "price5",
+            "columnName": "Price5",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "purchasePrice",
+            "columnName": "PurchasePrice",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "purchaseCost",
+            "columnName": "PurchaseCost",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mRPPrice",
+            "columnName": "MRPPrice",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stock",
+            "columnName": "Stock",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "volume",
+            "columnName": "Volume",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxRate",
+            "columnName": "TaxRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "offer",
+            "columnName": "Offer",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isLitreItem",
+            "columnName": "IsLitreItem",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "imagName",
+            "columnName": "ImagName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cgstRate",
+            "columnName": "CgstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstRate",
+            "columnName": "SgstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessRate",
+            "columnName": "CessRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "adlCessRate",
+            "columnName": "AdlCessRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kFCessRate",
+            "columnName": "KFCessRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "lastSyncTime",
+            "columnName": "LastSyncTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "markedForDelete",
+            "columnName": "MarkedForDelete",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "UnitRefId",
+            "columnName": "UnitRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "currentStock",
+            "columnName": "CurrentStock",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Unit",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Id` INTEGER NOT NULL, `CompanyId` INTEGER NOT NULL, `RefId` INTEGER NOT NULL, `Name` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "refId",
+            "columnName": "RefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "Name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Sale",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `companyId` INTEGER NOT NULL, `machineId` INTEGER NOT NULL, `payMode` TEXT, `docNo` TEXT, `docDate` TEXT, `isCashBill` INTEGER NOT NULL, `customerId` INTEGER NOT NULL, `customerRefId` INTEGER NOT NULL, `customerName` TEXT, `customerAddress1` TEXT, `customerAddress2` TEXT, `customerAddress3` TEXT, `customerPhone` TEXT, `customerGstin` TEXT, `placeOfSupply` TEXT, `amount` REAL NOT NULL, `discount` REAL NOT NULL, `grossAmount` REAL NOT NULL, `taxAmount` REAL NOT NULL, `cgstAmount` REAL NOT NULL, `sgstAmount` REAL NOT NULL, `igstAmount` REAL NOT NULL, `cessAmount` REAL NOT NULL, `kfcAmount` REAL NOT NULL, `totalAmount` REAL NOT NULL, `additionalDiscountRate` REAL NOT NULL, `additionalDiscount` REAL NOT NULL, `additionalCharges` REAL NOT NULL, `roundOff` REAL NOT NULL, `netAmount` REAL NOT NULL, `remarks` TEXT, `dueDate` TEXT, `isNetRate` INTEGER NOT NULL, `kfcInNetRate` INTEGER NOT NULL, `tripRefId` INTEGER NOT NULL, `tripNo` TEXT, `cancelled` INTEGER NOT NULL, `cancelledReason` TEXT, `sync` INTEGER NOT NULL, `syncTime` TEXT, `referenceId` TEXT, `uniqueId` TEXT, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "companyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineId",
+            "columnName": "machineId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payMode",
+            "columnName": "payMode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "docNo",
+            "columnName": "docNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "docDate",
+            "columnName": "docDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isCashBill",
+            "columnName": "isCashBill",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerId",
+            "columnName": "customerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerRefId",
+            "columnName": "customerRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerName",
+            "columnName": "customerName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerAddress1",
+            "columnName": "customerAddress1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerAddress2",
+            "columnName": "customerAddress2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerAddress3",
+            "columnName": "customerAddress3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerPhone",
+            "columnName": "customerPhone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerGstin",
+            "columnName": "customerGstin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "placeOfSupply",
+            "columnName": "placeOfSupply",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discount",
+            "columnName": "discount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grossAmount",
+            "columnName": "grossAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxAmount",
+            "columnName": "taxAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cgstAmount",
+            "columnName": "cgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstAmount",
+            "columnName": "sgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "igstAmount",
+            "columnName": "igstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessAmount",
+            "columnName": "cessAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcAmount",
+            "columnName": "kfcAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalAmount",
+            "columnName": "totalAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalDiscountRate",
+            "columnName": "additionalDiscountRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalDiscount",
+            "columnName": "additionalDiscount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalCharges",
+            "columnName": "additionalCharges",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "roundOff",
+            "columnName": "roundOff",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "netAmount",
+            "columnName": "netAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remarks",
+            "columnName": "remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dueDate",
+            "columnName": "dueDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isNetRate",
+            "columnName": "isNetRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcInNetRate",
+            "columnName": "kfcInNetRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tripRefId",
+            "columnName": "tripRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tripNo",
+            "columnName": "tripNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cancelled",
+            "columnName": "cancelled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cancelledReason",
+            "columnName": "cancelledReason",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sync",
+            "columnName": "sync",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "syncTime",
+            "columnName": "syncTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "referenceId",
+            "columnName": "referenceId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uniqueId",
+            "columnName": "uniqueId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SaleDtl",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `companyId` INTEGER NOT NULL, `salesId` INTEGER NOT NULL, `productId` INTEGER NOT NULL, `productRefId` INTEGER NOT NULL, `productCode` TEXT, `productName` TEXT, `rate` REAL NOT NULL, `netRate` REAL NOT NULL, `bulk` REAL NOT NULL, `volume` REAL NOT NULL, `quantity` REAL NOT NULL, `free` REAL NOT NULL, `totalQuantity` REAL NOT NULL, `amount` REAL NOT NULL, `discountRate` REAL NOT NULL, `discountAmount` REAL NOT NULL, `grossAmount` REAL NOT NULL, `taxRate` REAL NOT NULL, `sgstRate` REAL NOT NULL, `cgstRate` REAL NOT NULL, `igstRate` REAL NOT NULL, `cessRate` REAL NOT NULL, `kfcRate` REAL NOT NULL, `taxAmount` REAL NOT NULL, `cgstAmount` REAL NOT NULL, `sgstAmount` REAL NOT NULL, `igstAmount` REAL NOT NULL, `cessAmount` REAL NOT NULL, `kfcAmount` REAL NOT NULL, `totalAmount` REAL NOT NULL, `unitId` INTEGER NOT NULL, `unitRefId` INTEGER NOT NULL, `unitName` TEXT, `conversionRate` REAL NOT NULL, `stockQuantity` REAL NOT NULL, `serialNo` TEXT, `remarks` TEXT, `isadded` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "companyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "salesId",
+            "columnName": "salesId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productId",
+            "columnName": "productId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productRefId",
+            "columnName": "productRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productCode",
+            "columnName": "productCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "productName",
+            "columnName": "productName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rate",
+            "columnName": "rate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "netRate",
+            "columnName": "netRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bulk",
+            "columnName": "bulk",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "volume",
+            "columnName": "volume",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "free",
+            "columnName": "free",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalQuantity",
+            "columnName": "totalQuantity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discountRate",
+            "columnName": "discountRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discountAmount",
+            "columnName": "discountAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grossAmount",
+            "columnName": "grossAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxRate",
+            "columnName": "taxRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstRate",
+            "columnName": "sgstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cgstRate",
+            "columnName": "cgstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "igstRate",
+            "columnName": "igstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessRate",
+            "columnName": "cessRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcRate",
+            "columnName": "kfcRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxAmount",
+            "columnName": "taxAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cgstAmount",
+            "columnName": "cgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstAmount",
+            "columnName": "sgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "igstAmount",
+            "columnName": "igstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessAmount",
+            "columnName": "cessAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcAmount",
+            "columnName": "kfcAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalAmount",
+            "columnName": "totalAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitId",
+            "columnName": "unitId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitRefId",
+            "columnName": "unitRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitName",
+            "columnName": "unitName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "conversionRate",
+            "columnName": "conversionRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stockQuantity",
+            "columnName": "stockQuantity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "serialNo",
+            "columnName": "serialNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "remarks",
+            "columnName": "remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isadded",
+            "columnName": "isadded",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TripStock",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `companyId` INTEGER NOT NULL, `productId` INTEGER NOT NULL, `productRefId` INTEGER NOT NULL, `productName` TEXT, `unitId` INTEGER NOT NULL, `unitRefId` INTEGER NOT NULL, `unitName` TEXT, `stock` REAL NOT NULL, `SyncTime` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "companyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productId",
+            "columnName": "productId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productRefId",
+            "columnName": "productRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productName",
+            "columnName": "productName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "unitId",
+            "columnName": "unitId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitRefId",
+            "columnName": "unitRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitName",
+            "columnName": "unitName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "stock",
+            "columnName": "stock",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "SyncTime",
+            "columnName": "SyncTime",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "LocSettings",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `KfcInNetRate` INTEGER NOT NULL, `EnablePriceEdit` INTEGER NOT NULL, `EnableSaleEdit` INTEGER NOT NULL, `EnableSaleRetEdit` INTEGER NOT NULL, `EnableRecEdit` INTEGER NOT NULL, `BillNo` INTEGER NOT NULL, `BillPrefix` TEXT, `ReceiptNo` INTEGER NOT NULL, `ReceiptPrefix` TEXT, `SaleRetNo` INTEGER NOT NULL, `SaleRetNoDocNo` TEXT, `SaleRetNoPrefix` TEXT, `DefaultPaymentMode` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "KfcInNetRate",
+            "columnName": "KfcInNetRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Enablepriceedit",
+            "columnName": "EnablePriceEdit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Enablesaleedit",
+            "columnName": "EnableSaleEdit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "EnableSaleRetEdit",
+            "columnName": "EnableSaleRetEdit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "EnableRecEdit",
+            "columnName": "EnableRecEdit",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "BillNo",
+            "columnName": "BillNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "BillPrefix",
+            "columnName": "BillPrefix",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "RecNo",
+            "columnName": "ReceiptNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RecPrefix",
+            "columnName": "ReceiptPrefix",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "SaleRetNo",
+            "columnName": "SaleRetNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "SaleRetNoDocNo",
+            "columnName": "SaleRetNoDocNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "SaleRetNoPrefix",
+            "columnName": "SaleRetNoPrefix",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "DefaultPaymentMode",
+            "columnName": "DefaultPaymentMode",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "Receipt",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`AppId` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `Id` INTEGER NOT NULL, `CompanyId` INTEGER NOT NULL, `MachineId` INTEGER NOT NULL, `TripRefId` INTEGER NOT NULL, `DocNo` TEXT, `DocDate` TEXT, `CustomerId` INTEGER NOT NULL, `CustomerRefId` INTEGER NOT NULL, `CustomerCode` TEXT, `CustomerName` TEXT, `Amount` REAL NOT NULL, `CashAmount` REAL NOT NULL, `TransferAmount` REAL NOT NULL, `ChequeAmount` REAL NOT NULL, `ChequeNo` TEXT, `ChequeDate` TEXT, `Remarks` TEXT, `Sync` INTEGER, `SyncTime` TEXT, `ReferenceId` TEXT, `UniqueId` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "AppId",
+            "columnName": "AppId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CompanyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "MachineId",
+            "columnName": "MachineId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "TripRefId",
+            "columnName": "TripRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "DocNo",
+            "columnName": "DocNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "DocDate",
+            "columnName": "DocDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "CustomerId",
+            "columnName": "CustomerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CustomerRefId",
+            "columnName": "CustomerRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CustomerCode",
+            "columnName": "CustomerCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "CustomerName",
+            "columnName": "CustomerName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Amount",
+            "columnName": "Amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CashAmount",
+            "columnName": "CashAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "TransferAmount",
+            "columnName": "TransferAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ChequeAmount",
+            "columnName": "ChequeAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ChequeNo",
+            "columnName": "ChequeNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ChequeDate",
+            "columnName": "ChequeDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Remarks",
+            "columnName": "Remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Sync",
+            "columnName": "Sync",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "SyncTime",
+            "columnName": "SyncTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ReferenceId",
+            "columnName": "ReferenceId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "UniqueId",
+            "columnName": "UniqueId",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "AppId"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "MdlRoute",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`Id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `CompanyId` INTEGER NOT NULL, `RefId` INTEGER NOT NULL, `RepRefId` INTEGER NOT NULL, `PriceLevel` INTEGER NOT NULL, `Name` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CompanyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RefId",
+            "columnName": "RefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "RepRefId",
+            "columnName": "RepRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "PriceLevel",
+            "columnName": "PriceLevel",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Name",
+            "columnName": "Name",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "Id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "TripExpenseModel",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`Id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `CompanyId` INTEGER NOT NULL, `TripId` INTEGER NOT NULL, `TripRefId` INTEGER NOT NULL, `ExpenseRefId` INTEGER NOT NULL, `ExpenseName` TEXT, `Amount` REAL NOT NULL, `Remarks` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "Id",
+            "columnName": "Id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "CompanyId",
+            "columnName": "CompanyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "TripId",
+            "columnName": "TripId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "TripRefId",
+            "columnName": "TripRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ExpenseRefId",
+            "columnName": "ExpenseRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ExpenseName",
+            "columnName": "ExpenseName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "Amount",
+            "columnName": "Amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "Remarks",
+            "columnName": "Remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "Id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SaleRet",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER NOT NULL, `companyId` INTEGER NOT NULL, `machineId` INTEGER NOT NULL, `payMode` TEXT, `docNo` TEXT, `docDate` TEXT, `refDocNo` TEXT, `isCashBill` INTEGER NOT NULL, `customerId` INTEGER NOT NULL, `customerRefId` INTEGER NOT NULL, `customerName` TEXT, `customerAddress1` TEXT, `customerAddress2` TEXT, `customerAddress3` TEXT, `customerPhone` TEXT, `customerGstin` TEXT, `placeOfSupply` TEXT, `amount` REAL NOT NULL, `discount` REAL NOT NULL, `grossAmount` REAL NOT NULL, `taxAmount` REAL NOT NULL, `cgstAmount` REAL NOT NULL, `sgstAmount` REAL NOT NULL, `igstAmount` REAL NOT NULL, `cessAmount` REAL NOT NULL, `kfcAmount` REAL NOT NULL, `totalAmount` REAL NOT NULL, `additionalDiscountRate` REAL NOT NULL, `additionalDiscount` REAL NOT NULL, `additionalCharges` REAL NOT NULL, `roundOff` REAL NOT NULL, `netAmount` REAL NOT NULL, `remarks` TEXT, `isNetRate` INTEGER NOT NULL, `kfcInNetRate` INTEGER NOT NULL, `tripRefId` INTEGER NOT NULL, `tripNo` TEXT, `cancelled` INTEGER NOT NULL, `cancelledReason` TEXT, `sync` INTEGER NOT NULL, `syncTime` TEXT, `referenceId` TEXT, `uniqueId` TEXT, PRIMARY KEY(`id`))",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "companyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "machineId",
+            "columnName": "machineId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payMode",
+            "columnName": "payMode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "docNo",
+            "columnName": "docNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "docDate",
+            "columnName": "docDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "refDocNo",
+            "columnName": "refDocNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isCashBill",
+            "columnName": "isCashBill",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerId",
+            "columnName": "customerId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerRefId",
+            "columnName": "customerRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "customerName",
+            "columnName": "customerName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerAddress1",
+            "columnName": "customerAddress1",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerAddress2",
+            "columnName": "customerAddress2",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerAddress3",
+            "columnName": "customerAddress3",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerPhone",
+            "columnName": "customerPhone",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "customerGstin",
+            "columnName": "customerGstin",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "placeOfSupply",
+            "columnName": "placeOfSupply",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discount",
+            "columnName": "discount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grossAmount",
+            "columnName": "grossAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxAmount",
+            "columnName": "taxAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cgstAmount",
+            "columnName": "cgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstAmount",
+            "columnName": "sgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "igstAmount",
+            "columnName": "igstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessAmount",
+            "columnName": "cessAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcAmount",
+            "columnName": "kfcAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalAmount",
+            "columnName": "totalAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalDiscountRate",
+            "columnName": "additionalDiscountRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalDiscount",
+            "columnName": "additionalDiscount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "additionalCharges",
+            "columnName": "additionalCharges",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "roundOff",
+            "columnName": "roundOff",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "netAmount",
+            "columnName": "netAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "remarks",
+            "columnName": "remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isNetRate",
+            "columnName": "isNetRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcInNetRate",
+            "columnName": "kfcInNetRate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tripRefId",
+            "columnName": "tripRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "tripNo",
+            "columnName": "tripNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "cancelled",
+            "columnName": "cancelled",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cancelledReason",
+            "columnName": "cancelledReason",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "sync",
+            "columnName": "sync",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "syncTime",
+            "columnName": "syncTime",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "referenceId",
+            "columnName": "referenceId",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "uniqueId",
+            "columnName": "uniqueId",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "SaleRetDtl",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `companyId` INTEGER NOT NULL, `returnId` INTEGER NOT NULL, `productId` INTEGER NOT NULL, `productRefId` INTEGER NOT NULL, `productCode` TEXT, `productName` TEXT, `rate` REAL NOT NULL, `netRate` REAL NOT NULL, `bulk` REAL NOT NULL, `volume` REAL NOT NULL, `quantity` REAL NOT NULL, `free` REAL NOT NULL, `totalQuantity` REAL NOT NULL, `amount` REAL NOT NULL, `discountRate` REAL NOT NULL, `discountAmount` REAL NOT NULL, `grossAmount` REAL NOT NULL, `taxRate` REAL NOT NULL, `sgstRate` REAL NOT NULL, `cgstRate` REAL NOT NULL, `igstRate` REAL NOT NULL, `cessRate` REAL NOT NULL, `kfcRate` REAL NOT NULL, `taxAmount` REAL NOT NULL, `cgstAmount` REAL NOT NULL, `sgstAmount` REAL NOT NULL, `igstAmount` REAL NOT NULL, `cessAmount` REAL NOT NULL, `kfcAmount` REAL NOT NULL, `totalAmount` REAL NOT NULL, `unitId` INTEGER NOT NULL, `unitRefId` INTEGER NOT NULL, `unitName` TEXT, `conversionRate` REAL NOT NULL, `stockQuantity` REAL NOT NULL, `serialNo` TEXT, `remarks` TEXT, `returnType` TEXT, `isadded` INTEGER)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "companyId",
+            "columnName": "companyId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "returnId",
+            "columnName": "returnId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productId",
+            "columnName": "productId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productRefId",
+            "columnName": "productRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "productCode",
+            "columnName": "productCode",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "productName",
+            "columnName": "productName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "rate",
+            "columnName": "rate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "netRate",
+            "columnName": "netRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bulk",
+            "columnName": "bulk",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "volume",
+            "columnName": "volume",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "free",
+            "columnName": "free",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalQuantity",
+            "columnName": "totalQuantity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "amount",
+            "columnName": "amount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discountRate",
+            "columnName": "discountRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "discountAmount",
+            "columnName": "discountAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "grossAmount",
+            "columnName": "grossAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxRate",
+            "columnName": "taxRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstRate",
+            "columnName": "sgstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cgstRate",
+            "columnName": "cgstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "igstRate",
+            "columnName": "igstRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessRate",
+            "columnName": "cessRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcRate",
+            "columnName": "kfcRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "taxAmount",
+            "columnName": "taxAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cgstAmount",
+            "columnName": "cgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sgstAmount",
+            "columnName": "sgstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "igstAmount",
+            "columnName": "igstAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "cessAmount",
+            "columnName": "cessAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "kfcAmount",
+            "columnName": "kfcAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "totalAmount",
+            "columnName": "totalAmount",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitId",
+            "columnName": "unitId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitRefId",
+            "columnName": "unitRefId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "unitName",
+            "columnName": "unitName",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "conversionRate",
+            "columnName": "conversionRate",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "stockQuantity",
+            "columnName": "stockQuantity",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "serialNo",
+            "columnName": "serialNo",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "remarks",
+            "columnName": "remarks",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "returnType",
+            "columnName": "returnType",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "isadded",
+            "columnName": "isadded",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "id"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2fb1968570966f8fd5f3d03ee0705c4b')"
+    ]
+  }
+}

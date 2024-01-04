@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/linearlong"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp">
+
+    <ImageView
+        android:id="@+id/prd_img"
+        android:layout_width="40dp"
+        android:layout_gravity="center"
+        android:layout_height="40dp"
+        android:visibility="gone"
+        android:src="@drawable/product" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5sp"
+            android:gravity="start|center"
+            android:layout_marginLeft="5sp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/prdName"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5sp"
+                android:text="Product Name"
+             
+                android:textColor="#000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5sp"
+            android:gravity="start|center"
+            android:layout_marginLeft="5sp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:drawablePadding="2sp"
+                android:visibility="visible"
+                android:layout_marginLeft="5sp"
+                android:gravity="center"
+                android:id="@+id/prdprice"
+                android:drawableLeft="@drawable/inr2020"
+                />
+
+             <com.google.android.material.textview.MaterialTextView
+                 android:id="@+id/prdstock"
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_marginLeft="5sp"
+                 android:text="stock"
+                 android:textColor="#000"
+                 android:textSize="16sp"
+                 android:gravity="center"
+                 android:textStyle="bold"
+                 android:drawableLeft="@drawable/stock"
+                 android:drawablePadding="2sp"
+                 android:visibility="visible" />
+
+             <com.google.android.material.textview.MaterialTextView
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:text="Product RefId"
+                 android:textColor="#000"
+                 android:textStyle="bold"
+                 android:textSize="18sp"
+                 android:visibility="gone"
+                 android:layout_marginLeft="5sp"
+                 android:id="@+id/prdrefid"
+                 />
+
+        </LinearLayout>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_margin="5sp"-->
+<!--            android:gravity="start|center"-->
+<!--            android:layout_marginLeft="5sp"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <com.google.android.material.textview.MaterialTextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:text="Product RefId"-->
+<!--                android:textColor="#000"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="18sp"-->
+<!--                android:visibility="visible"-->
+<!--                android:layout_marginLeft="5sp"-->
+<!--                android:id="@+id/prdstock"-->
+<!--                />-->
+
+<!--        </LinearLayout>-->
+
+    </LinearLayout>
+
+</LinearLayout>
