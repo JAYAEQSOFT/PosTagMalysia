@@ -1445,10 +1445,11 @@ else {
                                                                 DtlObj.setProductId(prd.getId());
                                                                 DtlObj.setBatchCode(Lst.get(0).getBatchCode());
                                                                 DtlObj.setBatchId(Lst.get(0).getBatchId());
-                                                                DtlObj.setUnitId(prd.getUnitId());
+                                                              //  DtlObj.setUnitId(prd.getUnitId());
                                                             long SaleunitId=0;
                                                                 if(unit!=0) {
                                                                     SaleunitId=unit;
+                                                                    DtlObj.setUnitId(SaleunitId);
                                                                 }
                                                                 else
                                                                 {
